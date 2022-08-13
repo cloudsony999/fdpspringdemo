@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+<bean id="x" class="com.example.Student" scope="singleton">
+<constructor-arg name="id" value="123"/>
+<constructor-arg name="name" value="amitava"/>
+</bean>
+ -->
+
+<!-- setter injection -->
+
+<bean id="y" class="com.example.Student">
+<property name="id" value="999"/>
+<property name="name" value="ibm"/>
+</bean>
+
+
+<bean id="bmw11" class="com.example.CarBMW">
+		<constructor-arg index="0" value="Black" />
+		<constructor-arg index="1" value="Z4 Roadster" />
+</bean>
+
+<bean id="audi88" class="com.example.CarAudi">
+		<constructor-arg index="0" value="Silver" />
+		<constructor-arg index="1" value="RS 5" />
+</bean>
+
+<bean id="p1" class="com.example.Person">
+<constructor-arg name="name" value="Shruti" />
+<constructor-arg name="car" ref="bmw11" />
+</bean>	
+
+<bean id="p2" class="com.example.Person">
+<property name="name" value="Bhaskor"/>
+<property name="car" ref="audi88"/>
+</bean>
+
+<bean id="v1" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+  <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+  <property name="url" value="jdbc:oracle:thin:@localhost:1521:ORCL21C"/>
+  <property name="username" value="c##scott"/>
+  <property name="password" value="tiger"/>
+</bean>
+
+<bean id="temp" class="org.springframework.jdbc.core.JdbcTemplate">
+  <constructor-arg>
+      <ref bean="v1"/>
+  </constructor-arg>
+</bean>
+
+
+<bean id="sc" class="com.example.SCreate">
+  <property name="jt">
+     <ref bean="temp"/>
+  </property>
+</bean>
+
+
+
+
+
+
+
+
+</beans>
