@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="b1" class="com.example.entity.Employee">
+<property name="empno" value="100"/>
+<property name="ename" value="priti"/>
+
+<!-- List -->
+<property name="knownLanguages">
+<list>
+<value>Tamil</value>
+<value>Hindi</value>
+<value>Bengali</value>
+</list>
+</property>
+
+<!-- Set -->
+<property name="skills">
+<set>
+<value>Java</value>
+<value>C</value>
+<value>Oracle</value>
+</set>
+</property>
+
+<!--  Map  -->
+<property name="salaryDetails">
+<map>
+<entry key="basicpay" value="10000"/>
+<entry key="allowances" value="600"/>
+<entry key="deducgtions" value="200"/>
+</map>
+</property>
+
+
+
+
+
+</bean>
+</beans>
